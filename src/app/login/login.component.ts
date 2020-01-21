@@ -91,10 +91,11 @@ export class LoginComponent implements OnInit {
 
     // ------------------ save individual info to database--------------------------------------
     saveInfo() {
-        this.info = new IInfo(this.dataStorageService.getName(), +
-            this.dataStorageService.getNationalId(), +
-            this.dataStorageService.getReportCode(), +
-            this.id.toString());
+        this.info = new IInfo(
+            this.dataStorageService.getName(),
+            this.dataStorageService.getNationalId(),
+            this.dataStorageService.getInstitution());
+        console.log(this.info, this.dataStorageService.getInstitution());
         this.infoService.postIndi(this.info).subscribe(next => {
             console.log(this.info);
             console.log('success to store individual');
