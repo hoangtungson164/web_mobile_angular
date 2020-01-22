@@ -35,10 +35,10 @@ export class SendingInfoComponent implements OnInit {
     getAllReport(id: number) {
         this.reportService.getAllReport(10, id).subscribe(next => {
             this.reports = next;
-            console.log('success get all the inquiry-report');
+            console.log('success get all the report');
         }, error => {
             console.log(error);
-            console.log('fail to get all the inquiry-report');
+            console.log('fail to get all the report');
         });
     }
 
