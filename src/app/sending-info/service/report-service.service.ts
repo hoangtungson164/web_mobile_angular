@@ -19,7 +19,7 @@ export class ReportService {
     }
 
     getAllReport(count = 10, id: number): Observable<IReport[]> {
-        return this.httpClient.get<IReport[]>(this.apiURL + '/' + id + '/report').pipe(
+        return this.httpClient.get<IReport[]>(this.apiURL + '/' + id + '/inquiry-report').pipe(
             map(data => data.filter((todo, i) => i < count))
         );
     }

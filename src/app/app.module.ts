@@ -13,8 +13,8 @@ import {LoginComponent} from './login/login.component';
 import { InformationComponent } from './information/information.component';
 import { FooterComponent } from './footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatCheckboxModule, MatRadioModule} from '@angular/material';
-import { ReportComponent } from './report/report.component';
+import {MatCheckboxModule, MatRadioModule, MatTableModule} from '@angular/material';
+import { InquiryReportComponent } from './inquiry-report/inquiry-report.component';
 import {HttpErrorInterceptor} from './http-error.interceptor';
 
 @NgModule({
@@ -27,7 +27,7 @@ import {HttpErrorInterceptor} from './http-error.interceptor';
         LoginComponent,
         InformationComponent,
         FooterComponent,
-        ReportComponent
+        InquiryReportComponent
     ],
     imports: [
         BrowserModule,
@@ -38,6 +38,7 @@ import {HttpErrorInterceptor} from './http-error.interceptor';
         BrowserAnimationsModule,
         MatCheckboxModule,
         MatRadioModule,
+        MatTableModule,
     ],
     providers: [
         {

@@ -45,12 +45,13 @@ export class LoginComponent implements OnInit {
         this.name = this.dataStorageService.getName();
         this.nationalId = this.dataStorageService.getNationalId();
         this.loginForm = this.fb.group({
-                email: ['', [Validators.required, Validators.minLength(5)]],
-                password: ['', [Validators.required, Validators.minLength(5)]],
-                confirmPassword: ['', [Validators.required, Validators.minLength(5)]]
-            }, {
-                validator: MustMatch('password', 'confirmPassword')
+                username: ['', [Validators.required, Validators.minLength(2)]],
+                password: ['', [Validators.required, Validators.minLength(2)]],
+                // confirmPassword: ['', [Validators.required, Validators.minLength(5)]]
             }
+            // , {
+            //     validator: MustMatch('password', 'confirmPassword')
+            // }
         );
         this.id = +this.route.snapshot.paramMap.get('id');
         this.report = this.dataStorageService.getReportName();
@@ -66,7 +67,7 @@ export class LoginComponent implements OnInit {
 
     // ------------------------logic after click next button ----------------------------------------------
     onSubmit() {
-        this.saveInfo();
+        // this.saveInfo();
         const {value} = this.loginForm;
         if (this.loginForm.invalid) {
             console.log('fail');
@@ -75,13 +76,9 @@ export class LoginComponent implements OnInit {
 
         this.authService.attemptAuth(value).subscribe(
             data => {
-                console.log(data.accessToken);
-                this.tokenStorage.saveId(data.id);
-                this.tokenStorage.saveEmail(data.email);
-                this.tokenStorage.saveUsername(data.name);
-                this.tokenStorage.saveToken(data.accessToken);
+                this.tokenStorage.saveToken(data.token);
                 console.log(this.tokenStorage.getToken());
-                this.router.navigate(['/banks/report']).then(r => console.log('success to navigate'));
+                this.router.navigate(['/banks', this.id, 'inquiryReport']).then(r => console.log('success to navigate'));
             },
             error => {
                 console.log(error);

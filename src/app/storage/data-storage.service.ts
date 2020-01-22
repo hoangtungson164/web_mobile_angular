@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {IInfo} from '../information/interface/i-info';
 
 const INSTITUTION = 'Target Institution';
-const CREDIT_REPORT = 'Credit report code';
+const CREDIT_REPORT = 'Credit inquiry-report code';
 const NAME = 'Full name';
 const NATIONAL_ID = 'National id';
 const CREDIT_NAME = 'Credit name';

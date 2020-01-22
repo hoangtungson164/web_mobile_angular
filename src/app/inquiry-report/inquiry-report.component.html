@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="body-title row">
+        <button class="btn btn-outline-primary back col-1" [routerLink]="['/banks', id, 'login']"><i class="fas fa-arrow-left"></i>
+        </button>
+        <div class="body-title col-10">Inquiry Report</div>
+    </div>
+    <hr>
+    <div>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Target Institution</th>
+                <th scope="col">Result</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row">
+                    <mat-checkbox color="primary" [(ngModel)]="check"></mat-checkbox>
+                </th>
+                <td>{{report}}</td>
+                <td>{{token}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <hr>
+<div class="btn btn-group col-12" *ngIf="check">
+    <button type="button" class="btn btn-outline-primary">Submit</button>
+    <button type="button" class="btn btn-outline-secondary">Cancel</button>
+</div>
+</div>
+
+

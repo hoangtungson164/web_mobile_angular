@@ -15,7 +15,7 @@ const httpOptions = {
 })
 export class AuthService {
 
-  private loginUrl = apiUrl + '/login';
+  private loginUrl = apiUrl + '/loginOracle';
   private signupUrl = apiUrl + '/register';
   private logoutUrl = apiUrl + '/logout';
 

@@ -35,13 +35,13 @@
                         <div class="form-group row">
                             <label for="exampleInputId" class="col-4 col-sm-2 col-form-label">ID:</label>
                             <input type="text" class="form-control col-8 col-sm-10" id="exampleInputId"
-                                   formControlName="email"
+                                   formControlName="username"
                                    aria-describedby="idHelp" placeholder="Enter Id"
-                                   [ngClass]="{ 'is-invalid': f.email.errors && f.email.touched }"/>
+                                   [ngClass]="{ 'is-invalid': f.username.errors && f.username.touched }"/>
                         </div>
-                        <div *ngIf="f.email.errors && f.email.touched" class="alert alert-danger">
-                            <div *ngIf="f.email.errors.required">Email is required</div>
-                            <div *ngIf="f.email.errors">Email must be at least 5 character</div>
+                        <div *ngIf="f.username.errors && f.username.touched" class="alert alert-danger">
+                            <div *ngIf="f.username.errors.required">Email is required</div>
+                            <div *ngIf="f.username.errors">Email must be at least 5 character</div>
                         </div>
                         <div class="form-group row">
                             <label for="exampleInputPassword1" class="col-4 col-sm-2 col-form-label">PW:</label>
@@ -53,18 +53,18 @@
                             <div *ngIf="f.password.errors.required">Password is required</div>
                             <div *ngIf="f.password.errors">Password must be at least 5 character</div>
                         </div>
-                        <div class="form-group row">
-                            <label for="exampleInputPassword2"
-                                   class="col-4 col-sm-2 col-form-label">PW(confirm):</label>
-                            <input type="password" class="form-control col-8 col-sm-10"
-                                   formControlName="confirmPassword"
-                                   id="exampleInputPassword2" placeholder="ConfirmPassword"
-                                   [ngClass]="{ 'is-invalid': f.confirmPassword.errors && f.confirmPassword.touched }"/>
-                        </div>
-                        <div *ngIf="f.confirmPassword.errors && f.confirmPassword.touched" class="alert alert-danger">
-                            <div *ngIf="f.confirmPassword.errors.required"> Confirm password is required</div>
-                            <div *ngIf="f.confirmPassword.errors.mustMatch">Confirm password must be the same</div>
-                        </div>
+<!--                        <div class="form-group row">-->
+<!--                            <label for="exampleInputPassword2"-->
+<!--                                   class="col-4 col-sm-2 col-form-label">PW(confirm):</label>-->
+<!--                            <input type="password" class="form-control col-8 col-sm-10"-->
+<!--                                   formControlName="confirmPassword"-->
+<!--                                   id="exampleInputPassword2" placeholder="ConfirmPassword"-->
+<!--                                   [ngClass]="{ 'is-invalid': f.confirmPassword.errors && f.confirmPassword.touched }"/>-->
+<!--                        </div>-->
+<!--                        <div *ngIf="f.confirmPassword.errors && f.confirmPassword.touched" class="alert alert-danger">-->
+<!--                            <div *ngIf="f.confirmPassword.errors.required"> Confirm password is required</div>-->
+<!--                            <div *ngIf="f.confirmPassword.errors.mustMatch">Confirm password must be the same</div>-->
+<!--                        </div>-->
                     </form>
                 </div>
             </div>
@@ -73,7 +73,7 @@
     <hr>
 
 <!-------------------------------------button next ------------------------------------------>
-    <div id="wrapper" *ngIf="check && !f.email.errors && !f.password.errors && !f.confirmPassword.errors && name && nationalId">
+    <div id="wrapper" *ngIf="check && !f.username.errors && !f.password.errors && name && nationalId">
         <button class="btn btn-outline-primary" (click)="onSubmit()">Next</button>
     </div>
 </div>

@@ -31,18 +31,18 @@ export class SendingInfoComponent implements OnInit {
         this.getAllReport(this.id);
     }
 
-    // ---------------------- get all the report --------------------------------------
+    // ---------------------- get all the inquiry-report --------------------------------------
     getAllReport(id: number) {
         this.reportService.getAllReport(10, id).subscribe(next => {
             this.reports = next;
-            console.log('success get all the report');
+            console.log('success get all the inquiry-report');
         }, error => {
             console.log(error);
-            console.log('fail to get all the report');
+            console.log('fail to get all the inquiry-report');
         });
     }
 
-    // ------------------------ store the chosen report -------------------------------------
+    // ------------------------ store the chosen inquiry-report -------------------------------------
     checkBox(report: string, name: string) {
         this.check = true;
         this.dataStorageService.saveReportCode(report);
