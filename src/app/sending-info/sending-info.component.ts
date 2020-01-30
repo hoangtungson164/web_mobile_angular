@@ -1,9 +1,8 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {DataStorageService} from '../storage/data-storage.service';
-import {ReportService} from './service/report-service.service';
 import {IReport} from './interface/i-report';
-import * as $ from 'jquery';
+import {SendingInfoService} from './service/sending-info.service';
 
 @Component({
     selector: 'app-sending-info',
@@ -22,7 +21,7 @@ export class SendingInfoComponent implements OnInit {
     constructor(
         private route: ActivatedRoute,
         private dataStorageService: DataStorageService,
-        private reportService: ReportService,
+        private sendingInfoService: SendingInfoService,
     ) {
     }
 
@@ -33,7 +32,7 @@ export class SendingInfoComponent implements OnInit {
 
     // ---------------------- get all the inquiry-report --------------------------------------
     getAllReport(id: number) {
-        this.reportService.getAllReport(10, id).subscribe(next => {
+        this.sendingInfoService.getAllReport(10, id).subscribe(next => {
             this.reports = next;
             console.log('success get all the report');
         }, error => {

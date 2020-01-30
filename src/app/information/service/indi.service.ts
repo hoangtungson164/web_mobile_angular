@@ -2,17 +2,16 @@ import {Injectable} from '@angular/core';
 import {environment} from '../../../environments/environment.prod';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {IBankConsensus} from '../../bank-consensus/interface/i-bank-consensus';
 import {IInfo} from '../interface/i-info';
 
-const URL = environment.URL;
+const URL = environment.externalURL;
 
 @Injectable({
     providedIn: 'root'
 })
 export class IndiService {
 
-    private apiURL = URL + '/indi';
+    private apiURL = URL + '/cicMacrRQST';
 
     constructor(private httpClient: HttpClient) {
     }

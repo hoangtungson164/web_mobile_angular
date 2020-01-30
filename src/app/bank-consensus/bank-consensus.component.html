@@ -76,7 +76,7 @@
     <br>
 
 <!------------------------------------------------------- Button next ------------------------------------------------------>
-    <div id="wrapper" *ngIf="agreeAll">
+    <div id="wrapper" *ngIf="agreeAll && dataStorageService.getNationalId() && dataStorageService.getName()">
         <button class="btn btn-outline-primary" [routerLink]="['/banks', id, 'login']">Next</button>
     </div>
 </div>

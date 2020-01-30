@@ -1,11 +1,13 @@
 export class IInfo {
-    FULL_NAME: string;
-    NATIONAL_ID: string;
-    CUST_CD: string;
+    fiCode = 'fiCode';
+    taskCode = 'CIC_Mobile_Report';
+    name: string;
+    mobilePhoneNumber = '000011112222';
+    natId: string;
+    infoProvConcent = 'Y';
 
-    constructor(FULL_NAME, NATIONAL_ID, CUST_CD) {
-        this.NATIONAL_ID = NATIONAL_ID;
-        this.FULL_NAME = FULL_NAME;
-        this.CUST_CD = CUST_CD;
+    constructor(FULL_NAME, NATIONAL_ID) {
+        this.natId = NATIONAL_ID;
+        this.name = FULL_NAME;
     }
 }

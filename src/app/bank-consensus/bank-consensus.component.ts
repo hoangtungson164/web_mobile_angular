@@ -2,6 +2,7 @@ import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {BankService} from '../bank-list/service/bank.service';
 import {IBankConsensus} from './interface/i-bank-consensus';
 import {ActivatedRoute} from '@angular/router';
+import {DataStorageService} from '../storage/data-storage.service';
 
 @Component({
     selector: 'app-bank-consensus',
@@ -18,6 +19,7 @@ export class BankConsensusComponent implements OnInit {
     constructor(
         private bankService: BankService,
         private route: ActivatedRoute,
+        private dataStorageService: DataStorageService,
     ) {
     }
 

@@ -1,5 +1,4 @@
 import {Injectable} from '@angular/core';
-import {IInfo} from '../information/interface/i-info';
 
 const INSTITUTION = 'Target Institution';
 const CREDIT_REPORT = 'Credit inquiry-report code';

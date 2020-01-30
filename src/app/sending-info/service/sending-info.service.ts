@@ -11,7 +11,7 @@ const URL = environment.URL;
 @Injectable({
     providedIn: 'root'
 })
-export class ReportService {
+export class SendingInfoService {
 
     apiURL = URL + '/banks';
 
