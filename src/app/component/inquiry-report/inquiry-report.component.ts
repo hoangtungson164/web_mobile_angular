@@ -1,7 +1,7 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {TokenStorageService} from '../jwt/token.service';
-import {DataStorageService} from '../storage/data-storage.service';
+import {TokenStorageService} from '../../jwt/token.service';
+import {DataStorageService} from '../../storage/data-storage.service';
 import {IInfo} from '../information/interface/i-info';
 import {IndiService} from '../information/service/indi.service';
 

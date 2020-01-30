@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {DataStorageService} from '../storage/data-storage.service';
+import {DataStorageService} from '../../storage/data-storage.service';
 
 @Component({
     selector: 'app-information',

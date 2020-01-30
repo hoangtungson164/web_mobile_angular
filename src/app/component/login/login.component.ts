@@ -1,10 +1,9 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {DataStorageService} from '../storage/data-storage.service';
-import {TokenStorageService} from '../jwt/token.service';
-import {AuthService} from '../jwt/auth.service';
-import {HttpErrorResponse, HttpEvent} from '@angular/common/http';
+import {DataStorageService} from '../../storage/data-storage.service';
+import {TokenStorageService} from '../../jwt/token.service';
+import {AuthService} from '../../jwt/auth.service';
 
 @Component({
     selector: 'app-login',

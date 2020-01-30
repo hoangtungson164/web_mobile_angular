@@ -14,7 +14,7 @@
     <hr>
 
 <!-------------------------------------------------- login   ------------------------------------------------------>
-    <div class="accordion" id="accordionExample">
+    <div class="accordion login" id="accordionExample">
         <div class="card">
             <div class="card-header card-check form-inline" id="headingOne">
                 <div class="form-group col-sm-11 col-10">
@@ -33,8 +33,8 @@
                 <div class="card-body">
                     <form [formGroup]="loginForm">
                         <div class="form-group row">
-                            <label for="exampleInputId" class="col-4 col-sm-2 col-form-label">ID:</label>
-                            <input type="text" class="form-control col-8 col-sm-10" id="exampleInputId"
+                            <label for="exampleInputId" class="col-4 col-sm-2 col-form-label login">ID:</label>
+                            <input type="text" class="form-control col-8 col-sm-10 login" id="exampleInputId"
                                    formControlName="username"
                                    aria-describedby="idHelp" placeholder="Enter Id"
                                    [ngClass]="{ 'is-invalid': f.username.errors && f.username.touched }"/>
@@ -44,8 +44,8 @@
                             <div *ngIf="f.username.errors">Username must be at least 5 character</div>
                         </div>
                         <div class="form-group row">
-                            <label for="exampleInputPassword1" class="col-4 col-sm-2 col-form-label">PW:</label>
-                            <input type="password" class="form-control col-8 col-sm-10" formControlName="password"
+                            <label for="exampleInputPassword1" class="col-4 col-sm-2 col-form-label login">PW:</label>
+                            <input type="password" class="form-control col-8 col-sm-10 login" formControlName="password"
                                    id="exampleInputPassword1" placeholder="Password"
                                    [ngClass]="{ 'is-invalid': f.password.errors && f.password.touched}"/>
                         </div>

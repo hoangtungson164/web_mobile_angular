@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {BankService} from './service/bank.service';
 import {IBank} from './interface/ibank';
-import {DataStorageService} from '../storage/data-storage.service';
+import {DataStorageService} from '../../storage/data-storage.service';
 
 @Component({
     selector: 'app-bank-list',

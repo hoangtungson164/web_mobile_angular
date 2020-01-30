@@ -2,19 +2,19 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
-import {BankListComponent} from './bank-list/bank-list.component';
+import {BankListComponent} from './component/bank-list/bank-list.component';
 import {AppRoutingModule} from './app-routing/app-routing.module';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
-import {HeadingComponent} from './heading/heading.component';
-import {BankConsensusComponent} from './bank-consensus/bank-consensus.component';
+import {HeadingComponent} from './header-footer/heading/heading.component';
+import {BankConsensusComponent} from './component/bank-consensus/bank-consensus.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {SendingInfoComponent} from './sending-info/sending-info.component';
-import {LoginComponent} from './login/login.component';
-import { InformationComponent } from './information/information.component';
-import { FooterComponent } from './footer/footer.component';
+import {SendingInfoComponent} from './component/sending-info/sending-info.component';
+import {LoginComponent} from './component/login/login.component';
+import { InformationComponent } from './component/information/information.component';
+import { FooterComponent } from './header-footer/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCheckboxModule, MatRadioModule, MatTableModule} from '@angular/material';
-import { InquiryReportComponent } from './inquiry-report/inquiry-report.component';
+import { InquiryReportComponent } from './component/inquiry-report/inquiry-report.component';
 import {HttpErrorInterceptor} from './http-error.interceptor';
 
 @NgModule({

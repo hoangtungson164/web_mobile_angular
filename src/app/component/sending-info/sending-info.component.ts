@@ -1,6 +1,6 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {DataStorageService} from '../storage/data-storage.service';
+import {DataStorageService} from '../../storage/data-storage.service';
 import {IReport} from './interface/i-report';
 import {SendingInfoService} from './service/sending-info.service';
 

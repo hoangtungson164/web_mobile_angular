@@ -4,7 +4,7 @@ import {Observable} from 'rxjs';
 import {IBank} from '../../bank-list/interface/ibank';
 import {map} from 'rxjs/operators';
 import {IReport} from '../interface/i-report';
-import {environment} from '../../../environments/environment.prod';
+import {environment} from '../../../../environments/environment.prod';
 
 const URL = environment.URL;
 
