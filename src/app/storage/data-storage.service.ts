@@ -5,6 +5,8 @@ const CREDIT_REPORT = 'Credit inquiry-report code';
 const NAME = 'Full name';
 const NATIONAL_ID = 'National id';
 const CREDIT_NAME = 'Credit name';
+const USER_ID = 'user_id';
+const PASSWORD = 'password';
 
 @Injectable({
     providedIn: 'root'
@@ -59,5 +61,22 @@ export class DataStorageService {
         return sessionStorage.getItem(NATIONAL_ID);
     }
 
+    public saveUserId(userId: string) {
+        window.sessionStorage.removeItem(USER_ID);
+        window.sessionStorage.setItem(USER_ID, userId);
+    }
 
+    public getUserId(): string {
+        return sessionStorage.getItem(USER_ID);
+    }
+
+
+    public savePassword(password: string) {
+        window.sessionStorage.removeItem(PASSWORD);
+        window.sessionStorage.setItem(PASSWORD, password);
+    }
+
+    public getPassword(): string {
+        return sessionStorage.getItem(PASSWORD);
+    }
 }
