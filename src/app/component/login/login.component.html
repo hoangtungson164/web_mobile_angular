@@ -63,7 +63,7 @@
                         </div>
                         <div *ngIf="f.confirmPassword.errors && f.confirmPassword.touched" class="alert alert-danger">
                             <div *ngIf="f.confirmPassword.errors.required"> Confirm password is required</div>
-                            <div *ngIf="f.confirmPassword.errors.mustMatch">Confirm password must be the same</div>
+                            <div *ngIf="f.confirmPassword.errors">Confirm password must be the same</div>
                         </div>
                     </form>
                 </div>

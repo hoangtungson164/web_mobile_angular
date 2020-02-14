@@ -15,6 +15,8 @@ export class BankConsensusComponent implements OnInit {
     bankConsensus: IBankConsensus;
     id: number;
     agreeAll = false;
+    fullName: string;
+    nationalId: string;
 
     constructor(
         private bankService: BankService,
@@ -24,6 +26,8 @@ export class BankConsensusComponent implements OnInit {
     }
 
     ngOnInit() {
+        this.nationalId = this.dataStorageService.getNationalId();
+        this.fullName = this.dataStorageService.getName();
         this.id = +this.route.snapshot.paramMap.get('id');
         this.getConsensus(this.id);
     }
@@ -42,6 +46,12 @@ export class BankConsensusComponent implements OnInit {
     // ---------------------------- go to next page until agree -------------------------------
     agreeWith() {
         this.agreeAll = !this.agreeAll;
+    }
+
+    onNext() {
+        this.nationalId = this.dataStorageService.getNationalId();
+        this.fullName = this.dataStorageService.getName();
+        return this.nationalId && this.fullName && this.agreeAll;
     }
 
 }

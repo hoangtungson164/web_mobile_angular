@@ -20,8 +20,10 @@ export class InformationComponent implements OnInit {
     ngOnInit() {
         if (this.dataStorageService.getName() || this.dataStorageService.getNationalId()) {
             this.informationForm = this.fb.group({
-                full_name: [this.dataStorageService.getName(), [Validators.required, Validators.minLength(5)]],
-                national_id: [this.dataStorageService.getNationalId(), [Validators.required, Validators.minLength(9)]]
+                full_name: [this.dataStorageService.getName(), [Validators.required,
+                    Validators.pattern('^[^0-9]+$')]],
+                national_id: [this.dataStorageService.getNationalId(), [Validators.required,
+                    Validators.pattern('^[0-9]{9,12}$')]]
             });
         } else {
             this.informationForm = this.fb.group({

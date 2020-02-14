@@ -1,5 +1,5 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {DataStorageService} from '../../storage/data-storage.service';
 import {IInfo} from '../information/interface/i-info';
 import {IndiService} from '../information/service/indi.service';
@@ -27,6 +27,7 @@ export class InquiryReportComponent implements OnInit {
         private userService: UserService,
         private dataStorageService: DataStorageService,
         private infoService: IndiService,
+        private router: Router,
     ) {
     }
 
@@ -79,5 +80,10 @@ export class InquiryReportComponent implements OnInit {
         }, error => {
             console.log('fail to insert user');
         });
+    }
+
+    clearAllData() {
+        this.dataStorageService.clear();
+        this.router.navigateByUrl('/');
     }
 }

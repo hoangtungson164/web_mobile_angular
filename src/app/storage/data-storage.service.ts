@@ -79,4 +79,8 @@ export class DataStorageService {
     public getPassword(): string {
         return sessionStorage.getItem(PASSWORD);
     }
+
+    public clear(): void {
+        sessionStorage.clear();
+    }
 }

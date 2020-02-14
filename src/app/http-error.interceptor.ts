@@ -8,7 +8,9 @@ import {
 } from '@angular/common/http';
 import {Observable, throwError} from 'rxjs';
 import {retry, catchError} from 'rxjs/operators';
+import { Injectable } from "@angular/core";
 
+@Injectable()
 export class HttpErrorInterceptor implements HttpInterceptor {
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         return next.handle(request)
@@ -26,7 +28,8 @@ export class HttpErrorInterceptor implements HttpInterceptor {
                     } else if (error.status === 400) {
                         errorMessage = 'Wrong username or password';
                     } else {
-                        errorMessage = `Error Code: ${error.status}\nMessage: unknown problem.`;
+                        errorMessage = `Error Code: ${error.message + ' ' + error.error + ' '
+                        + error.headers + ' ' + error.name + ' ' + error.statusText + ' ' + error.type}\nMessage: unknown problem.`;
                     }
                     window.alert(errorMessage);
                     return throwError(errorMessage);
